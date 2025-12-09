@@ -37,13 +37,13 @@ test("Register new user", async ({}) => {
   
 });
 
-// test("Check for mail confirmation", async ({}) => {
-//     // Implementation for checking mail confirmation will go here
+test("Check for mail confirmation", async ({}) => {
+    // Implementation for checking mail confirmation will go here
 
-//     let messageText= await readLatestGmail();
-//      await page.waitForTimeout(3000);
-//     messageText=messageText.replace("&#39;","'");
-//     expect(messageText.toLowerCase()).toContain("welcome to our platform! we're excited to have you onboard");
+    let messageText= await readLatestGmail();
+     await page.waitForTimeout(3000);
+    messageText=messageText.replace("&#39;","'");
+    expect(messageText.toLowerCase()).toContain("welcome to our platform! we're excited to have you onboard");
     
 
-// });
+});
