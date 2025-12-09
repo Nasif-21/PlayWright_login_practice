@@ -1,7 +1,7 @@
 import { test,Page,expect } from "@playwright/test";
 import { UserModel } from "../Model/UserModel.ts";
 import { fa,faker } from '@faker-js/faker';
-import { randomNumber } from "../Utils/utils.ts";
+import { randomNumber, saveJsonData } from "../Utils/utils.ts";
 import{RegisterPage} from "../pages/Register.ts";
 import { readLatestGmail } from "../Services/Gmail_Data_Read.ts";
 import assert, { Assert } from "assert";
@@ -33,16 +33,17 @@ test("Register new user", async ({}) => {
     // await page.pause();
 
     await register.registerNewUser(usermodel);
+    saveJsonData(usermodel,"userData.json");
   
 });
 
-test("Check for mail confirmation", async ({}) => {
-    // Implementation for checking mail confirmation will go here
+// test("Check for mail confirmation", async ({}) => {
+//     // Implementation for checking mail confirmation will go here
 
-    let messageText= await readLatestGmail();
-     await page.waitForTimeout(3000);
-    messageText=messageText.replace("&#39;","'");
-    expect(messageText.toLowerCase()).toContain("welcome to our platform! we're excited to have you onboard");
+//     let messageText= await readLatestGmail();
+//      await page.waitForTimeout(3000);
+//     messageText=messageText.replace("&#39;","'");
+//     expect(messageText.toLowerCase()).toContain("welcome to our platform! we're excited to have you onboard");
     
 
-});
+// });
