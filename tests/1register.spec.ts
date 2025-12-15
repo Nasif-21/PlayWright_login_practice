@@ -49,7 +49,7 @@ test("Check for mail confirmation", async ({}) => {
     
 
 });
-<<<<<<< HEAD
+
 
 test("Go to login and do latest login", async ({}) => {
     await page.goto("https://dailyfinance.roadtocareer.net/login");
@@ -64,5 +64,4 @@ test("Go to login and do latest login", async ({}) => {
 
 
 });
-=======
->>>>>>> 612c35a77e62cd7b7713c788844286b9d2f3d2c3
+
